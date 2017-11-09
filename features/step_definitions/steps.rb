@@ -29,8 +29,23 @@ end
 
 Given /^I open on Transports category$/ do
     @pages.page_create_filter.open_category("Transports")
+    @pages.page_sub_category.visible?
 end
 
-Given /^I open sub cat Vieglie auto/ do
-  @pages.page_sub_category.open_sub_category("Vieglie auto")
+Given /^I open sub cat Vieglie auto$/ do
+    @pages.page_sub_category.open_sub_category("Vieglie auto")
+    @pages.page_sub_category.visible?
+end
+
+Given /^I open sub cat Cartype category$/ do
+    @pages.page_sub_category.open_sub_category("Volkswagen")
+end
+
+Given /^I open sub cat Bora subcategory$/ do
+    @pages.page_sub_category.open_sub_category("Volkswagen Bora")
+end
+
+Given /^I open sub cat Darbiba subcategory$/ do
+    @pages.page_sub_category.open_sub_category("Pārdod")
+    sleep(4)
 end
