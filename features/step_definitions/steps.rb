@@ -39,9 +39,57 @@ end
 Given /^I am on parameters page$/ do
   @pages.page_paremeters.visible?
 end
-
+#Aizpilda parametrus
 Given /^I set filter parameters$/ do
-  @pages.page_paremeters.set_name("Test Name")
-  @pages.page_paremeters.set_parameter("GADS", "1999", "2002")
+  @pages.page_paremeters.set_name("Audi A1")
+  @pages.page_paremeters.set_parameter("CENA (EUR)", "9001", "10001")
+  @pages.page_paremeters.set_parameter("GADS", "2011", "2012")
+  @pages.page_paremeters.set_parameter("NOBRAUKUMS (TŪKST.)", "70000", "150000")
+  #@pages.page_parameters.set_parameter("TILPUMS", "1.4", "1.6")
   @pages.page_paremeters.save_filter
+end
+
+#Pārbaudam vai papildus filtru iegādes paziņojums ir parādījies
+Given /^I am on buy extra filters page$/ do
+  @pages.page_buy_filter.visible?
+end
+#Aizveram paziņojuma logu par papildus filtru iegādi
+Given /^I click cancel to move forward$/ do
+  @pages.page_buy_filter.close_pay_window
+end
+#Atveram menu sadaļu
+Given /^I click on menu button$/ do
+  @pages.page_create_filter.menu_section
+end
+#Pārbaudam vai menu sadaļa ir parādījusies
+Given /^I am on menu_section page$/ do
+  @pages.page_menu_section.visible?
+end
+#Atveram meklēšanas filtru sadaļu
+Given /^I click on search filter page$/ do
+  @pages.page_menu_section.menu_title_category("Meklēšanas filtri")
+end
+#Pārbaudam vai nepieciešamie elementi ir parādījušies
+Given /^I am on search_filters page$/ do
+  @pages.page_search_filters.visible?
+end
+#Atveram filtru ar mūsu piešķirto nosaukumu
+Given /^I open filter_audi filter$/ do
+  @pages.page_search_filters.open_filter("Audi A1")
+end
+#Pārbaudam vai tas ir atvēries
+Given /^I am on filter page$/ do
+  @pages.page_filter_view.visible?
+end
+#Nosipiežam uz delete pogas
+Given /^I click on delete button/ do
+  @pages.page_filter_view.delete_filter_click
+end
+#Pārbaudam vai atvērās brīdinājums par to, vai tiešām vēlamies dzēst...
+Given /^I am on delete frame page/ do
+  @pages.page_delete_filter.visible?
+end
+#Izvēlamies opciju dzēst
+Given /^I click to delete filter/ do
+  @pages.page_delete_filter.delete_filter
 end

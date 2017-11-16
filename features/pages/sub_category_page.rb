@@ -12,4 +12,5 @@ class SubCategoryPage < BasePage
   def open_sub_category(name)
     @sub_cat.scroll_to_exact(name).click
   end
+
 end
