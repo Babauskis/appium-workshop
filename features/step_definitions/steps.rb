@@ -23,14 +23,29 @@
 
 
 Given /^I am on create filter page$/ do
-  @tests.filters_test.close_intro
+  @tests.filter_test.close_intro
 end
-
 
 Given /^I open filter params$/ do
-  @tests.filters_test.open_filter_params
+  @tests.filter_test.open_filter_params
 end
 
-Given /^I submit filter/ do
-  @tests.filters_test.submit_filter
+Given /^I submit params filter$/ do
+  @tests.filter_test.submit_filter
+end
+
+Given /^I close buy filters screen$/ do
+  @tests.filter_test.close_buy_window
+end
+
+Given /^I am validating screen$/ do
+  @tests.filter_test.notific_transport
+end
+
+Given /^I verify on screen keyboard$/ do
+  @tests.filter_test.verify_keyboard
+end
+
+Given /^I open settings page$/ do
+  @tests.settings_test.open_settings
 end

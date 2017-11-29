@@ -39,4 +39,12 @@ class ParametersPage < BasePage
   def save_filter
     @button_apply.click
   end
+  
+#reference: https://stackoverflow.com/questions/29034590/how-can-i-verify-if-keyboard-is-open-or-not-in-appium-using-ruby
+  def keyboard_available
+    if `adb shell dumpsys input_method`[/mInputShown=\w+/i].split('=')[1] == 'true'
+    puts "Filter is empty"
+  else
+    puts "Filter isn't empty"
+  end
 end

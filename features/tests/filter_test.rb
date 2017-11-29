@@ -26,4 +26,15 @@ class FilterTest
     set_filter_params
     @pages.page_paremeters.save_filter
   end
+
+  def close_buy_window
+    @pages.page_buy_filter.visible?
+    @pages.page_buy_filter.close_buy_filter
+  end
+
+  def verify_keyboard
+    open_filter_params 
+    @pages.page_paremeters.save_filter
+    @oages.page_paremeters.keyboard_available
+  end
 end

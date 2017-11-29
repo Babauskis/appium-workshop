@@ -18,4 +18,19 @@ class Pages
     @page_paremeters ||= ParametersPage.new
     @page_paremeters
   end
+
+  def page_menu_section
+    @page_menu_section ||= MenuSectionPage.new
+    @page_menu_section
+  end  
+
+  def page_buy_filter
+    @page_buy_filter ||= BuyFilterPage.new
+    @page_buy_filter
+  end
+
+  def page_settings
+    @page_settings ||= SettingsPage.new
+    @page_settings
+  end
 end
