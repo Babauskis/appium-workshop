@@ -26,11 +26,42 @@ Given /^I am on create filter page$/ do
   @tests.filters_test.close_intro
 end
 
-
-Given /^I open filter params$/ do
-  @tests.filters_test.open_filter_params
+Given /^I open transports params$/ do
+  @tests.filters_test.open_filter_params_tr
 end
 
-Given /^I submit filter/ do
-  @tests.filters_test.submit_filter
+Given /^I open nekustamie params$/ do
+  @tests.filters_test.open_filter_params_ne
+end
+
+Given /^I open vakances params$/ do
+  @tests.filters_test.open_filter_params_va
+end
+
+Given /^I submit transports filter$/ do
+  @tests.filters_test.submit_filter_tr
+end
+
+Given /^I submit nekustamie filter$/ do
+  @tests.filters_test.submit_filter_ne
+end
+
+Given /^I submit vakances filter$/ do
+  @tests.filters_test.submit_filter_va
+end
+
+Given /^I close buy filters$/ do
+  @tests.close_buy_filter_popup
+end
+
+Given /^I open search filters$/ do
+  @tests.open_search_filters
+end
+
+Given /I open existing filter$/do
+  @tests.open_existing_filter
+end
+
+Given /I open existing filter$/do
+  @tests.delete_filter
 end
